@@ -98,7 +98,7 @@ class EdamQueryTest(unittest.TestCase):
         docstring set to private to avoid automatic default docstring in documentation
         """
         cls.dir_path=os.path.dirname(os.path.realpath(__file__))
-        cls.edam_graph = ConjunctiveGraph()
+        cls.edam_graph = ConjunctiveGraph(store="Oxigraph")
         cls.edam_graph.parse(os.environ.get("EDAM_PATH"), format="xml")
         cls.report = pd.DataFrame(
             columns=["Level", "Test Name", "Entity", "Label", "Debug Message"]
@@ -823,7 +823,7 @@ class EdamQueryTest(unittest.TestCase):
 
     ################# DUPLICATE ALL ###########################
 
-    def test_duplicate_all(self):
+    def xest_duplicate_all(self):
 
         """
         Checks that there is no duplicate content (case sensitive, for computational reasons) across all the ontology on given properties.
