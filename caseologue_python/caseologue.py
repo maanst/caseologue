@@ -823,7 +823,7 @@ class EdamQueryTest(unittest.TestCase):
 
     ################# DUPLICATE ALL ###########################
 
-    def xest_duplicate_all(self):
+    def test_duplicate_all(self):
 
         """
         Checks that there is no duplicate content (case sensitive, for computational reasons) across all the ontology on given properties.
