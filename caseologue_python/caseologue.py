@@ -38,7 +38,7 @@ def parsing():
 
     sys.argv[1:] = args.unittest_args
 
-    return (run_error, run_essential, run_curation)
+    return run_error, run_essential, run_curation
 
 
 def suite():
@@ -47,7 +47,7 @@ def suite():
     """
     suite = unittest.TestSuite()
 
-    if run_curation == True:
+    if run_curation:
         suite.addTest(EdamQueryTest("test_deprecated_replacement_obsolete"))
         suite.addTest(EdamQueryTest("test_formatting"))
         suite.addTest(EdamQueryTest("test_check_wikipedia_link"))
@@ -57,14 +57,14 @@ def suite():
         #        suite.addTest(EdamQueryTest('test_duplicate_all'))   too long computing time for now 
         suite.addTest(EdamQueryTest("test_format_property_missing"))
 
-    if run_essential == True:
+    if run_essential:
         suite.addTest(EdamQueryTest("test_super_class_refers_to_self"))
         suite.addTest(EdamQueryTest("test_bad_uri_reference"))
         suite.addTest(EdamQueryTest("test_empty_property"))
         suite.addTest(EdamQueryTest("test_id_unique"))
         suite.addTest(EdamQueryTest("test_spelling_check"))
 
-    if run_error == True:
+    if run_error:
         suite.addTest(EdamQueryTest("test_mandatory_property_missing"))
         suite.addTest(EdamQueryTest("test_deprecated_replacement"))
         suite.addTest(EdamQueryTest("test_missing_deprecated_property"))
@@ -1215,7 +1215,7 @@ class EdamQueryTest(unittest.TestCase):
 
         """
 
-        if cls.timing.empty == False:
+        if not cls.timing.empty:
             pd.set_option(
                 "display.max_rows",
                 None,
@@ -1232,7 +1232,7 @@ class EdamQueryTest(unittest.TestCase):
             )
 
         # output = cls.report.sort('Level',)
-        if cls.report.empty == False:
+        if not cls.report.empty:
             pd.set_option(
                 "display.max_rows",
                 None,
