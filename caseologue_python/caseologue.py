@@ -54,7 +54,7 @@ def suite():
         suite.addTest(EdamQueryTest("test_identifier_property_missing"))
         suite.addTest(EdamQueryTest("test_relation_too_broad"))
         suite.addTest(EdamQueryTest("test_literal_links"))
-        #        suite.addTest(EdamQueryTest('test_duplicate_all'))   too long computing time for now 
+        suite.addTest(EdamQueryTest('test_duplicate_all'))
         suite.addTest(EdamQueryTest("test_format_property_missing"))
 
     if run_essential:
