@@ -72,7 +72,7 @@ if __name__ == "__main__":
     test_caseologue(name= "formatting", nb_expected_error=5)
     test_caseologue(name= "deprecated_replacement", nb_expected_error=1)
     test_caseologue(name= "bad_uri_reference", nb_expected_error=6)
-    #test_caseologue(name= "missing_deprecated_property", nb_expected_error=3)
+    test_caseologue(name= "missing_deprecated_property", nb_expected_error=3)
     test_caseologue(name= "check_wikipedia_link", nb_expected_error=2)
     test_caseologue(name= "identifier_property_missing", nb_expected_error=1)
     test_caseologue(name= "id_unique", nb_expected_error=2)
@@ -83,6 +83,6 @@ if __name__ == "__main__":
     test_caseologue(name= "next_id_modif", nb_expected_error=1)
     test_caseologue(name= "subset_id", nb_expected_error=1)
     test_caseologue(name= "object_relation_obsolete", nb_expected_error=1)
-    test_caseologue(name= "format_property_missing", nb_expected_error=2) # 3
+    test_caseologue(name= "format_property_missing", nb_expected_error=3)
     test_caseologue(name= "empty_property", nb_expected_error=1)
     test_caseologue(name= "spelling_check", nb_expected_error=2)
